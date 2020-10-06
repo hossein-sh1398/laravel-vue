@@ -1,0 +1,14 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\Auth\AuthController;
+
+/*
+* Route Group Authentication User
+*/
+Route::prefix('auth')->group(function() {
+	Route::post('register', [AuthController::class, 'register'])->name('auth.register');
+	Route::post('login', [AuthController::class, 'login'])->name('auth.login');
+	Route::post('logout', [AuthController::class, 'logout'])->name('auth.logout');
+	Route::get('user', [AuthController::class, 'user'])->name('auth.user');
+});
