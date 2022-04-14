@@ -42,3 +42,7 @@ Route::get('/', function () {
             );
         dd($answer);
 });
+
+Route::get('users', function () {
+    return \DB::table('users')->get();
+});
